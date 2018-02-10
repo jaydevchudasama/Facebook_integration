@@ -1,0 +1,51 @@
+1.take image from gallery and camera
+-> http://www.c-sharpcorner.com/UploadFile/e14021/capture-image-from-camera-and-selecting-image-from-gallery-o/
+
+2.Registration validation check email
+-> https://stackoverflow.com/questions/12947620/email-address-validation-in-android-on-edittext
+
+3.Retrofit example in post method
+-> https://code.tutsplus.com/tutorials/sending-data-with-retrofit-2-http-client-for-android--cms-27845
+ integration ->https://www.spaceotechnologies.com/android-tutorial-about-retrofit-integrate-network-calling/
+4. Display contact
+-> http://stackandroid.com/tutorial/android-reading-phone-contacts-example/
+
+5.Contact Display
+-> 
+
+6.Image Upload in Retrofit
+-> http://www.pratikbutani.com/2016/06/android-upload-image-file-using-retrofit-2-0/
+
+7.Material desing
+-> https://material.io/guidelines/layout/principles.html#
+
+8.Material sheet fab button
+-> https://github.com/gowong/material-sheet-fab
+
+9.Android ANimation
+-> http://www.viralandroid.com/search/label/Animation
+
+10.Android Project
+-> https://www.androidhive.info/
+
+11.Create own website
+-> https://www.wix.com/
+
+12.First latter in each word diplay in label
+-> https://stackoverflow.com/questions/35177726/how-to-change-first-letter-of-each-word-to-uppercase-in-textview-xml
+
+13.Toolbar parallax effect
+->http://en.proft.me/2017/04/23/how-create-parallax-scrolling-android/
+
+14.Toolbar Background transparent color
+->https://zaman91.wordpress.com/2010/03/22/android-how-to-create-transparent-or-opeque-background/
+-> set toolbar.getBackground().setAlpha(0);
+15.Login Maintain
+->https://stackoverflow.com/questions/12744337/how-to-keep-android-applications-always-be-logged-in-state
+->https://www.amalhichri.net/android-user-session-management-with-sharedpreferences/
+
+16.Recyclerview Exaple
+->https://www.survivingwithandroid.com/2016/09/android-recyclerview-tutorial.html
+
+	item click
+	-> https://stackoverflow.com/questions/40584424/simple-android-recyclerview-example

@@ -1,0 +1,99 @@
+package com.eccelor.kd.sems;
+
+
+import android.content.SharedPreferences;
+import android.support.v7.widget.AppCompatEditText;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.widget.AppCompatButton;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Toast;
+import com.eccelor.android.library.Activity;
+import com.eccelor.kd.sems.PreferenceHelper.Helper;
+
+public class LoginActivity extends Activity
+{
+
+    AppCompatEditText textSchoolCode;
+    AppCompatEditText textSchoolPassword;
+    AppCompatButton buttonLogin;
+    SharedPreferences sp;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        if (Helper.getUserContext(context).length()!=0)
+        {
+            startActivity(new Intent(LoginActivity.this,DashboardActivity.class));
+        }
+        
+        /*   sp=getSharedPreferences("login",MODE_PRIVATE);
+        if(sp.contains("scode") && sp.contains("pw")){
+            startActivity(new Intent(LoginActivity.this,DashboardActivity.class));
+            finish();   //finish current activity
+        }*/
+    }
+
+    @Override
+    protected void initializeComponents()
+    {
+        super.initializeComponents();
+
+        textSchoolCode = findViewById(R.id.textSchoolCode);
+        textSchoolPassword = findViewById(R.id.textSchoolPassword);
+        buttonLogin = findViewById(R.id.buttonLogin);
+    }
+
+    @Override
+    protected void bindEvents()
+    {
+        super.bindEvents();
+        View.OnClickListener clickListener = new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                switch (view.getId())
+                {
+                    case R.id.buttonLogin:
+
+                        String SchoolCode = textSchoolCode.getText().toString().trim();
+                        String SchoolPassword = textSchoolPassword.getText().toString().trim();
+
+                        if (TextUtils.isEmpty(SchoolCode))
+                        {
+                            textSchoolCode.setError("Enter School Code");
+                            textSchoolCode.requestFocus();
+                            return;
+                        }
+                        if (TextUtils.isEmpty(SchoolPassword) || textSchoolPassword.getText().toString().trim().length()<=5)
+                        {
+                            textSchoolPassword.setError("Enter School Password");
+                            textSchoolPassword.requestFocus();
+                            return;
+                        }
+                        else {
+
+                              Helper.setUserContext(context,textSchoolCode.getText().toString());
+                              startActivity(new Intent(LoginActivity.this,DashboardActivity.class));
+                              finish();
+                              Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+
+                            /*    SharedPreferences.Editor e=sp.edit();
+                                e.putString("scode","pref");
+                                e.putString("pw","pref");
+                                e.commit();*/
+                        }
+                        break;
+                }
+            }
+        };
+        buttonLogin.setOnClickListener(clickListener);
+    }
+}
